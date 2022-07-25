@@ -4,8 +4,8 @@
   <!-- alert error message(s) -->
   <% if @user.errors.any? %>
     <div class="alert alert-danger">
-      <%= @user.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
     </div>
   <% end %>
