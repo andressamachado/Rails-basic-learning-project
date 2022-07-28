@@ -14,4 +14,6 @@ class User < ApplicationRecord
     with: URI::MailTo::EMAIL_REGEXP,
     message: 'invalid email address provided'
   }
+
+  validates :password, presence: true
 end
