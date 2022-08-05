@@ -5,6 +5,8 @@
 # password:string virtual
 # password_confirmation:string virtual
 class User < ApplicationRecord
+  has_many :twitter_accounts
+  
   # will make sure the password and password_confirmation match,
   # then take the password and run it through bcrypt to create a digest
   # and assign that digest for us
