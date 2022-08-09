@@ -1,7 +1,22 @@
-<div class="d-flex-align-items-center justify-content-center">
-  <h1> Welcome Scheduled Tweets </h1>
+<div class="mb-5 text-center font-monospace">
+  <h1> Simple Scheduled Tweets Tool</h1>
+</div>
 
-  <div>
-    <%= button_to "Connect Twitter", "/auth/twitter", method: :post,:data => {turbo: "false"}, class: "btn btn-primary" %>
-  </div>
+<div class="shadow p-3 mb-5 bg-body rounded font-monospace text-center">
+  <p> Simple tool to help you organize your tweets. </p>
+  
+  <p>Connect with your accounts, write your tweets and set a day and time for them to be posted.</p>
+
+  <p> It`s as simple as that 🪄 </p>
+  
+  <% if Current.user.nil? %>
+    <div class="mt-5">
+      <%= link_to "Login", sign_in_path, class: "btn btn-primary mb-2" %> or
+      <%= link_to "Sign Up", sign_up_path %> if you dont have an account yet.
+    </div>
+  <% else %>
+    <div class="mt-5">
+      <%= button_to "Connect a Twitter account", "/auth/twitter", method: :post, :data => { turbo: "false" }, class: "btn btn-primary" %>
+    </div>
+  <% end %>
 </div>
