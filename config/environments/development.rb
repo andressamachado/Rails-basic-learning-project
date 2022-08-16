@@ -78,8 +78,8 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'basic-scheduled-tweets.herokuapp.com',
-    user_name:            'fimdocaos22@gmail.com',
-    password:             'rnlppnnvaowfltzg',
+    user_name:            Rails.application.credentials.dig(:google_smtp, :email),
+    password:             Rails.application.credentials.dig(:google_smtp, :password),
     authentication:       'plain',
     enable_starttls_auto: true }
 end
